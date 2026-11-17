@@ -89,6 +89,22 @@
       "_origin": "ast"
     },
     {
+      "id": "login_preflight",
+      "label": "login-preflight.mjs",
+      "file_type": "code",
+      "source_file": "login-preflight.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "login_preflight_evidence",
+      "label": "evidence",
+      "file_type": "code",
+      "source_file": "login-preflight.mjs",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "file_type": "code",
@@ -14761,6 +14777,27 @@
       "confidence": "EXTRACTED",
       "source_file": "e2e/login-copyright.spec.js",
       "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "login_preflight",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "login-preflight.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "login_preflight",
+      "target": "login_preflight_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "login-preflight.mjs",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -90615,10 +90652,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-17T16:12:41.489615+00:00",
+    "built_at": "2026-11-17T16:29:42.857666+00:00",
     "version": "graph_update-v1",
     "codebase_root": "/data/artifacts-v2/T68SFntRsD0Rn000717112616013517/developer",
     "force": true,
-    "files_scanned": 130
+    "files_scanned": 131
   }
 }
