@@ -206,6 +206,10 @@ function LoginPage() {
           <p className="mt-6 text-2xs text-slate-400">
             Demo environment — no backend. Any password is accepted; your selection is stored locally in your browser.
           </p>
+
+          <footer className="mt-6 text-xs text-slate-600">
+            © 2026-27 all rights reserved
+          </footer>
         </div>
       </div>
     </div>
