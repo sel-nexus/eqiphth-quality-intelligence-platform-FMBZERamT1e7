@@ -12,7 +12,7 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 375, height: 667 
     await expect(footer).toBeVisible();
     const signIn = page.getByRole('button', { name: /^sign in as/i });
     await expect(signIn).toBeVisible();
-    const select = page.getByLabel('Persona');
+    const select = page.getByRole('combobox');
     await select.selectOption('qe_manager');
     await expect(page.getByLabel('Email (derived from persona)')).toHaveValue('robert.kim@humana.com');
     await page.getByLabel('Password').fill('demo');
@@ -93,7 +93,7 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 375, height: 667 
     page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
     await page.setViewportSize(viewport);
     await page.goto('/login');
-    await page.getByLabel('Persona').selectOption('executive_leadership');
+    await page.getByRole('combobox').selectOption('executive_leadership');
     await page.getByRole('button', { name: /QE Manager/i }).click();
     await expect(page).toHaveURL(/\/hth$/);
     await expect(page.getByRole('button', { name: /Current persona: Robert Kim, QE Manager/i })).toBeVisible();
