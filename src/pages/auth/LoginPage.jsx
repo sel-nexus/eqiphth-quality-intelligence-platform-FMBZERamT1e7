@@ -105,7 +105,7 @@ function LoginPage() {
       </div>
 
       {/* Form panel */}
-      <div className="flex flex-1 items-center justify-center px-6 py-12">
+      <div className="flex min-w-0 flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div className="mb-8 lg:hidden">
             <BrandLogo variant="dark" size="md" />
@@ -206,6 +206,10 @@ function LoginPage() {
           <p className="mt-6 text-2xs text-slate-400">
             Demo environment — no backend. Any password is accepted; your selection is stored locally in your browser.
           </p>
+
+          <footer className="mt-6 text-xs text-slate-600">
+            © 2026-27 all rights reserved
+          </footer>
         </div>
       </div>
     </div>
