@@ -8,7 +8,7 @@
 
 ### Files and verification
 
-- `src/pages/auth/LoginPage.jsx`: four-line footer addition only.
+- `src/pages/auth/LoginPage.jsx`: four-line footer addition plus `min-w-0` on the form flex panel to prevent overflow at 320px; no handler changes.
 - `src/pages/auth/LoginPage.test.jsx`: nine focused component/regression cases.
 - `e2e/login-copyright.spec.js`, `playwright.config.js`: real-browser notice, reload, responsive geometry, keyboard and quick-login/session checks.
 - `package.json`: pinned Playwright testing dependency.

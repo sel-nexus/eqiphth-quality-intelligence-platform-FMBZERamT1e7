@@ -12,7 +12,7 @@ node node_modules/vite/bin/vite.js --host 0.0.0.0
 node node_modules/vitest/vitest.mjs run
 node node_modules/vite/bin/vite.js build
 node node_modules/@playwright/test/cli.js install chromium
-node node_modules/@playwright/test/cli.js test
+PW_DISABLE_TS_ESM=1 node node_modules/@playwright/test/cli.js test
 ```
 
 Playwright starts its Vite server automatically. Its base URL and port can be configured using `PLAYWRIGHT_BASE_URL` and `PLAYWRIGHT_PORT` (keep these consistent). `node login-preflight.mjs` captures desktop/mobile rendered HTML, accessibility and styles plus screenshots against that server; start the server separately for this evidence script.

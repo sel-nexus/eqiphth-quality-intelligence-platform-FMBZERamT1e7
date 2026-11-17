@@ -105,7 +105,7 @@ function LoginPage() {
       </div>
 
       {/* Form panel */}
-      <div className="flex flex-1 items-center justify-center px-6 py-12">
+      <div className="flex min-w-0 flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div className="mb-8 lg:hidden">
             <BrandLogo variant="dark" size="md" />

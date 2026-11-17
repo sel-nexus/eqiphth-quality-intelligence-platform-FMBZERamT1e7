@@ -55,24 +55,25 @@ for (const width of [320, 375, 768, 1440]) {
       const form = footer.parentElement.querySelector('form').getBoundingClientRect();
       const quick = footer.previousElementSibling.previousElementSibling.getBoundingClientRect();
       const style = getComputedStyle(footer);
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
       return {
         left: box.left, right: box.right, top: box.top, bottom: box.bottom,
         hintBottom: hint.bottom, formBottom: form.bottom, quickBottom: quick.bottom,
-        position: style.position, marginTop: style.marginTop,
-        fontSize: style.fontSize, color: style.color,
+        position: style.position, marginTop: parseFloat(style.marginTop),
+        fontSize: parseFloat(style.fontSize), color: style.color, rem,
         viewport: window.innerWidth,
         scrollWidth: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
         documentHeight: document.documentElement.scrollHeight,
       };
     });
     expect(geometry.position).toBe('static');
-    expect(geometry.marginTop).toBe('24px');
-    expect(geometry.fontSize).toBe('12px');
+    expect(geometry.marginTop).toBeCloseTo(1.5 * geometry.rem);
+    expect(geometry.fontSize).toBeCloseTo(0.75 * geometry.rem);
     expect(geometry.color).toBe('rgb(71, 85, 105)');
     expect(geometry.left).toBeGreaterThanOrEqual(0);
     expect(geometry.right).toBeLessThanOrEqual(geometry.viewport);
     expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.viewport);
-    expect(geometry.top - geometry.hintBottom).toBeGreaterThanOrEqual(23.5);
+    expect(geometry.top - geometry.hintBottom).toBeGreaterThanOrEqual(1.5 * geometry.rem - 0.5);
     expect(geometry.top).toBeGreaterThan(geometry.formBottom);
     expect(geometry.top).toBeGreaterThan(geometry.quickBottom);
     expect(geometry.bottom + await page.evaluate(() => window.scrollY)).toBeLessThanOrEqual(geometry.documentHeight);
